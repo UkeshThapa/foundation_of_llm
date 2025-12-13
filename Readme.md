@@ -16,6 +16,30 @@
 | **III** | 2014–2017 | **Alignment** | Attention Mechanism | Word-Level | Alignment Visuals |
 | **IV** | 2017–2020 | **Parallelism** | Transformers (BERT) | Subword (WordPiece) | GLUE, ROUGE |
 | **V** | 2020–Now | **Scale & Reasoning** | LLMs (GPT, Llama) | Byte-Level BPE | MMLU, HumanEval |
+---
+
+## 📂 Repository Structure & How to Use
+
+This repository follows a **"Hybrid Research"** workflow. We use Notebooks for exploration and Python Scripts for engineering.
+
+### Why two types of files?
+* **`notebooks (.ipynb)`**: Used for **Data Visualization** and **Quick Experiments**. You want to see the output immediately (e.g., plotting an Attention Heatmap).
+* **`scripts (.py)`**: Used for **Model Architecture**. We define our Neural Networks in `.py` files to keep the code modular and clean.
+
+### The Directory Layout
+
+| Folder | Content | File Type |
+| :--- | :--- | :--- |
+| **`01_statistical_era/`** | Basic counting models. | `ipynb` (Data Exploration) |
+| **`02_neural_era/`** | RNNs & Embeddings. | `rnn_model.py` (The logic) + `train.ipynb` (The runner) |
+| **`03_seq2seq_attention/`** | Attention Mechanisms. | `attention.py` (Math) + `demo.ipynb` (Visualization) |
+| **`04_transformer/`** | The "Vanilla" Transformer. | `layers.py` (Components) + `test_shapes.ipynb` (Debugging) |
+| **`05_llm_gpt/`** | Modern GPT-style LLM. | `train_gpt.py` (Training loop) + `chat.ipynb` (Inference) |
+
+### ⚡ Recommended Workflow for Students
+1.  **Read the `.py` file first**: Understand the class structure and the math in the `forward()` function.
+2.  **Run the `.ipynb` file**: Import the class, create a dummy input, and check if the matrix shapes match what you expect.
+3.  **Train**: Run the training loop and watch the loss go down!
 
 ---
 
