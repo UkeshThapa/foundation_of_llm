@@ -1,6 +1,6 @@
-# 🚀 From Scratch to LLM: A Deep Learning Roadmap
+# 🚀 Zero to LLM: A Deep Learning Roadmap
 
-**Instructor:** [Your Name]  
+**Instructor:** [Ukesh Thapa]  
 **Repository Goal:** To build the intuition behind Large Language Models (LLMs) by replicating the historical evolution of NLP architectures.
 
 > **Philosophy:** We do not start with the Transformer. We earn it. To understand *why* GPT-4 exists, we must first understand the failures of the systems that came before it.
@@ -46,7 +46,7 @@
 * **The Math:** Markov Assumption.
     $$P(w_t | \text{history}) \approx P(w_t | w_{t-1})$$
 * **The Flaw:** **Sparsity.** If the model hasn't seen the exact phrase "Purple Elephant" in training, the probability is 0.
-* **Assignment:** Build a `Trigram` language model that generates nonsensical but grammatically strictly text.
+* **Assignment:** Build a `Trigram` language model that generates nonsensical but grammatically strict text.
 
 ---
 
@@ -64,6 +64,7 @@
 **Concept:** Processing data sequentially (Time step $t$). The "Conveyor Belt" of memory.
 * **Architecture:**
     $$h_t = \tanh(W_h h_{t-1} + W_x x_t + b)$$
+    
 * **The Flaw:** **Vanishing Gradient.** The signal dies over long sequences (50+ words).
 * **Metric:** **Perplexity (PPL).** Measures how "surprised" the model is by real text. (Lower is better).
 * **Assignment:** Build a Character-level RNN to generate text letter-by-letter.
@@ -101,6 +102,7 @@
     * *Solves the `<UNK>` problem.*
 * **Metric:** **GLUE Benchmark.** A suite of 9 difficult tasks (Logic, Paraphrasing, Sentiment).
 * **Assignment:** Code a `SelfAttention` block (no `torch.nn`).
+    
 
 ---
 
@@ -130,6 +132,25 @@
 * **Final Assignment:** Build **"Mini-GPT"**.
     * Train a GPT-style model on the `TinyShakespeare` dataset.
     * Implement **Top-k Sampling** and **Temperature** for generation.
+
+---
+
+## 📜 Reading List (The Hall of Fame)
+
+These are the seminal papers that defined each era.
+
+| Year | Paper Title | Impact |
+| :--- | :--- | :--- |
+| **2003** | [A Neural Probabilistic Language Model](https://www.jmlr.org/papers/volume3/bengio03a/bengio03a.pdf) (Bengio et al.) | The first serious attempt at a Neural Network for Language. |
+| **2013** | [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/abs/1301.3781) (Mikolov et al.) | **Word2Vec**. Proved King - Man + Woman = Queen. |
+| **2014** | [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/abs/1409.3215) (Sutskever et al.) | Defined the **Encoder-Decoder** bottleneck architecture. |
+| **2014** | [Neural Machine Translation by Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473) (Bahdanau et al.) | Invented **Additive Attention** (The Searchlight). |
+| **2015** | [Neural Machine Translation of Rare Words with Subword Units](https://arxiv.org/abs/1508.07909) (Sennrich et al.) | Invented **BPE Tokenization** (Subwords). |
+| **2017** | [Attention Is All You Need](https://arxiv.org/abs/1706.03762) (Vaswani et al.) | Invented the **Transformer**. Killed RNNs. |
+| **2018** | [BERT: Pre-training of Deep Bidirectional Transformers](https://arxiv.org/abs/1810.04805) (Devlin et al.) | The peak of "Encoder-Only" models. |
+| **2020** | [Language Models are Few-Shot Learners](https://arxiv.org/abs/2005.14165) (Brown et al.) | **GPT-3**. Proved that scale creates emergent reasoning. |
+| **2022** | [Training language models to follow instructions with human feedback](https://arxiv.org/abs/2203.02155) (Ouyang et al.) | **InstructGPT**. Introduced RLHF (Alignment). |
+| **2023** | [LLaMA: Open and Efficient Foundation Language Models](https://arxiv.org/abs/2302.13971) (Touvron et al.) | Democratized powerful LLMs for the open-source community. |
 
 ---
 
